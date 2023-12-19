@@ -1,66 +1,32 @@
-## Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## API-Endpoint
+`http://localhost:8088/api/getBalance/"Your Address Here"`
 
-Foundry consists of:
+## Testnet 
+Sepolia
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## TestTokenAddress
+0x3Fd55Be18574E83BB7B280a5664cFcEBF05E8271
 
-## Documentation
+## Endpoint and Config can be found In?
+/controller/TestToken/ folder
 
-https://book.getfoundry.sh/
+## Contract (Test Token)
+ In the /src/ folder
 
-## Usage
+## How to compile the contract
+ Use forge build/compile to compile the contract
 
-### Build
+ ## Endpoint Response Format:
+ JSON
+ example: {
+  "address": "0x4932b72f8F88e741366a30aa27492aFEd143A5E1",
+  "balance": "0"
+}
 
-```shell
-$ forge build
-```
+`No access Control specifier on testToken so anyone can mint the Tokens.`
+`Contract is verified on Etherscan. So you can use that to mint Tokens.`
 
-### Test
+Script for mint tokens is not written because of use of deployer key and rpc url in foundry
 
-```shell
-$ forge test
-```
 
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
